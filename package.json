@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/LuisAngelHM/chatApp/issues"
   },
-  "homepage": "https://github.com/LuisAngelHM/chatApp#readme"
+  "homepage": "https://github.com/LuisAngelHM/chatApp#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
 }
