@@ -8,16 +8,23 @@ const MONGO_URI = `mongodb+srv://${USER}:${PASSWORD}@${config.dbHost}/${DB_NAME}
 
 
 db.Promise = global.Promise;
-function connect(){
-    console.log(MONGO_URI);
+async function connect(){
     db.connect(MONGO_URI, {useNewUrlParser: true}).then(()=>{
         console.log('Connected Success');
     }).catch(err=>{
         console.log(err);
     });
-    return db;
+}
+
+function disconnect(){
+    mongoose.connection.close(() =>{
+        return true
+    });
+    return false;
 }
 
 
 
-module.exports = connect ;
+module.exports = {  
+    connect,
+    disconnect} ;
